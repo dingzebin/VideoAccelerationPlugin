@@ -1,0 +1,21 @@
+  {
+    "name": "视频倍速插件",
+    "version": "1.0",
+    "description": "Build an Extension!",
+	"permissions": ["contextMenus", "management","storage","tabs","unlimitedStorage","http://*/*", "https://*/*"],
+    "manifest_version": 2,
+	"content_scripts": 
+    [
+        {
+            "matches": ["https://wl.scutde.net:443/edu3/edu3/learning/materevise/showvideo.html*"],
+            "js": ["contentScript.js"],
+			"run_at": "document_end",
+			"all_frames": true
+        }
+    ],
+	"browser_action":
+    {
+        "default_title": "播放速度",
+        "default_popup": "popup.html"
+    }
+  }
